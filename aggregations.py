@@ -1,7 +1,6 @@
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local[*]").setAppName("Aggregations")
-# conf = SparkConf().setMaster("spark://Dirks-iMac.local:7077").setAppName("Aggregations")
 sc = SparkContext(conf=conf)
 sc.setLogLevel("ERROR")
 

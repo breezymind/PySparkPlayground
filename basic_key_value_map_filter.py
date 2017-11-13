@@ -27,6 +27,7 @@ def basicKeyValueMapFilter(input):
     print(output.collect())
     return output
 
+
 if __name__ == "__main__":
     master = "local"
     if len(sys.argv) == 2:

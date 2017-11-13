@@ -1,6 +1,3 @@
-import sys
-import tokenize
-
 from pyspark import SparkContext, SparkConf
 
 def basicSquare(nums):

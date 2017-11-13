@@ -41,7 +41,7 @@ print(result)
 
 # The combOp seems unnecessary but in the map reduce world of spark you need
 # that separate operation. Realize that these functions are going to be
-# parallelized. peopleRDD is partitioned up. And dependending on its source and
+# parallelized. peopleRDD is partitioned up. And depending on its source and
 # method of converting the data to an RDD each row could be on its own
 # partition.
 
@@ -62,8 +62,5 @@ print(females.collect())
 # females.saveAsTextFile('file:///tmp/females.txt')
 males = peopleRdd.filter(lambda x: x['gender'] == 'M')
 print(males.collect())
-
-# import time           # Added to give me time to check the DAG
-# time.sleep(60)
 
 sc.stop()

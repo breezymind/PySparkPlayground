@@ -1,13 +1,4 @@
-# """
-# >>> from pyspark.context import SparkContext
-# >>> sc = SparkContext('local', 'test')
-# >>> b = sc.parallelize([1, 2, 3, 4])
-# >>> sorted(basicSquareNoOnes(b).collect())
-# [4, 9, 16]
-# """
-
 import sys
-
 from pyspark import SparkContext
 
 # Squaring numbers and filtering out the 1's

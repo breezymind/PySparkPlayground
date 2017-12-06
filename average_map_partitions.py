@@ -1,11 +1,3 @@
-# """
-# >>> from pyspark.context import SparkContext
-# >>> sc = SparkContext('local', 'test')
-# >>> b = sc.parallelize([1, 2, 3, 4])
-# >>> avg(b)
-# 2.5
-# """
-
 import sys
 
 from pyspark import SparkContext

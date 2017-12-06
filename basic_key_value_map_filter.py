@@ -1,14 +1,4 @@
-# """
-# >>> from pyspark.context import SparkContext
-# >>> sc = SparkContext('local', 'test')
-# >>> input = ["coffee", "i really like coffee", "coffee > magic"]
-# >>> b = sc.parallelize(input)
-# >>> sorted(basicKeyValueMapFilter(b).collect())
-# [4, 9]
-# """
-
 import sys
-
 from pyspark import SparkContext
 
 

@@ -1,29 +1,11 @@
-#
-# Licensed to the Apache Software Foundation (ASF) under one or more
-# contributor license agreements.  See the NOTICE file distributed with
-# this work for additional information regarding copyright ownership.
-# The ASF licenses this file to You under the Apache License, Version 2.0
-# (the "License"); you may not use this file except in compliance with
-# the License.  You may obtain a copy of the License at
-#
-#    http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
 """
-This is an example implementation of ALS for learning how to use Spark. Please refer to
-pyspark.ml.recommendation.ALS for more conventional use.
+This is an example implementation of ALS for learning how to use Spark. 
+Refer to pyspark.ml.recommendation.ALS for more conventional use.
 
-This example requires numpy (http://www.numpy.org/)
+This example requires numpy.
+
+Usage: als [M] [U] [F] [iterations] [partitions]"
 """
-# from __future__ import print_function
-
-import sys
 
 from numpy import *
 from numpy.random import rand
@@ -54,14 +36,6 @@ def update(i, mat, ratings):
 
 
 if __name__ == "__main__":
-
-    """
-    Usage: als [M] [U] [F] [iterations] [partitions]"
-    """
-
-    print("""WARN: This is a naive implementation of ALS and is given as an
-      example. Please use pyspark.ml.recommendation.ALS for more
-      conventional use.""", file=sys.stderr)
 
     spark = SparkSession\
         .builder\

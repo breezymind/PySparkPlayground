@@ -1,11 +1,3 @@
-# """
-# >>> from pyspark.context import SparkContext
-# >>> sc = SparkContext('local', 'test')
-# >>> b = sc.parallelize(["KK6JKQ", "Ve3UoW", "kk6jlk", "W6BB"])
-# >>> fetchCallSigns(b).size()
-# 4
-# """
-
 import sys
 import urllib3
 

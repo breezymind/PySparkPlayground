@@ -1,6 +1,5 @@
 """
 An example demonstrating k-means clustering.
-This example requires NumPy (http://www.numpy.org/).
 """
 
 from pyspark.ml.clustering import KMeans

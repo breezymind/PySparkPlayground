@@ -1,5 +1,10 @@
 """
 Random Forest Classifier Example.
+
+Using libsvm format: <label> <index1:value1> <index2:value2> ... <indexN:valueN>
+Data is stored in sparse form, meaning only the non-zero data are stored, and
+any missing data is taken as holding value zero.
+
 """
 
 from pyspark.ml import Pipeline
@@ -23,7 +28,8 @@ if __name__ == "__main__":
                                  outputCol="indexedLabel").fit(data)
 
     # Automatically identify categorical features, and index them.
-    # Set maxCategories so features with > 4 distinct values are treated as continuous.
+    # Set maxCategories so features with > 4 distinct values are treated as
+    # continuous.
     featureIndexer = VectorIndexer(inputCol="features",
                                    outputCol="indexedFeatures",
                                    maxCategories=4).fit(data)
@@ -48,11 +54,15 @@ if __name__ == "__main__":
     # Train model.  This also runs the indexers.
     model = pipeline.fit(trainingData)
 
+    # model is of type 'pyspark.ml.pipeline.PipelineModel', which represents
+    # a compiled pipeline with transformers and fitted models.
+    print(type(model))
+
     # Make predictions.
-    predictions = model.transform(testData)
+    predictions = model.transform(testData)  # Returns dataframe
 
     # Select example rows to display.
-    predictions.select("predictedLabel", "label", "features").show(5)
+    predictions.select("predictedLabel", "label", "features").show(10)
 
     # Select (prediction, true label) and compute test error
     evaluator = MulticlassClassificationEvaluator(labelCol="indexedLabel",
@@ -61,6 +71,7 @@ if __name__ == "__main__":
     accuracy = evaluator.evaluate(predictions)
     print("Test Error = {:.2f}".format(1.0 - accuracy))
 
+    # Get the random forest model (third stage of the pipeline)
     rfModel = model.stages[2]
     print(rfModel)  # summary only
 

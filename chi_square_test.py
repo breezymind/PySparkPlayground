@@ -20,6 +20,7 @@ if __name__ == "__main__":
         .appName("ChiSquareTest") \
         .getOrCreate()
 
+    # Create dataframe with label and features vector
     data = [(0.0, Vectors.dense(0.5, 10.0)),
             (0.0, Vectors.dense(1.5, 20.0)),
             (1.0, Vectors.dense(1.5, 30.0)),

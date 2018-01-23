@@ -1,6 +1,12 @@
 """
 An example demonstrating Multilayer Perceptron Classifier.
 
+Multilayer perceptron classifier (MLPC) is a classifier based on the 
+feedforward artificial neural network. MLPC consists of multiple layers of 
+nodes. Each layer is fully connected to the next layer in the network. Nodes in 
+the input layer represent the input data. All other nodes map inputs to outputs 
+by a linear combination of the inputs with the node’s weights ww and bias bb 
+and applying an activation function.
 """
 
 from pyspark.ml.classification import MultilayerPerceptronClassifier

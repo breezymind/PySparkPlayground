@@ -19,7 +19,8 @@ if __name__ == "__main__":
     data = spark.read.format("libsvm").load("data/sample_libsvm_data.txt")
 
     # Automatically identify categorical features, and index them.
-    # We specify maxCategories so features with > 4 distinct values are treated as continuous.
+    # We specify maxCategories so features with > 4 distinct values are
+    # treated as continuous.
     featureIndexer = VectorIndexer(inputCol="features",
                                    outputCol="indexedFeatures",
                                    maxCategories=4).fit(data)
